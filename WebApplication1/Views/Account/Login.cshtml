@@ -1,0 +1,67 @@
+﻿@using WebApplication1.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Log in";
+    Layout = "~/Views/Shared/_Login.cshtml";
+
+}
+
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100">
+
+
+            @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary("", new { @class = "text-danger" })
+                <br />
+                <br />
+                <br />
+                <br />
+                <span class="login100-form-title p-b-34">
+
+                    Account Login
+                </span>
+                <div class="container">
+                    <div class="row">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Email, new { @class = "col-md-12 control-label" })
+                            <div class="col-md-12">
+                                <div class="" data-validate="Type user name">
+                                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = "User name" })
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Password, new { @class = "col-md-12 control-label" })
+                            <div class="col-md-12">
+                                <div class="" data-validate="Type user name">
+                                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "Password" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <br />
+                <br />
+                <div class="container-login100-form-btn">
+                    <button class="login100-form-btn">
+                        Login
+                    </button>
+                </div>
+                <div class="w-full text-center p-t-27 p-b-239">
+
+                </div>
+
+            }
+
+            <div class="login100-more"></div>
+        </div>
+    </div>
+</div>
+<div id="dropDownSelect1"></div>

@@ -1,0 +1,104 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<header class="masthead d-flex">
+    <div class="container text-center my-auto">
+        <h1 class="mb-1">laundry management</h1>
+        <h3 class="mb-5">
+            <em>Manage your business in easiest way</em>
+        </h3>
+        <a class="btn btn-primary btn-xl js-scroll-trigger" href="#services">Find Out More</a>
+    </div>
+    <div class="overlay"></div>
+    <script>
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
+	exportEnabled: true,
+	animationEnabled: true,
+	title: {
+		text: "Automotive Semiconductor Vendors 2015",
+		fontSize: 21
+	},
+	data: [{
+		type: "pie",
+		startAngle: 160,
+		toolTipContent: "<b>{label}</b>: {y}%",
+		indexLabel: "{label} - {y}%",
+		dataPoints: @Html.Raw(ViewBag.DataPoints)
+	}]
+});
+chart.render();
+
+}
+    </script>
+</header>
+
+<!-- Services -->
+<section class="content-section bg-primary text-white text-center" id="services">
+    <div class="container">
+        <div class="content-section-heading">
+            <h3 class="text-secondary mb-0">Services</h3>
+            <h2 class="mb-5">Application freature</h2>
+        </div>
+        <div class="row">
+
+            <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                <span class="service-icon rounded-circle mx-auto mb-3">
+                    <img src="~/Content/img/new.png" alt="" width="70px" height="70px" />
+                </span>
+                <h4>
+                    <strong>Create your business</strong>
+                </h4>
+                <p class="text-faded mb-0">you can create a new business and add new branches if you like</p>
+            </div>
+         
+            <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                <span class="service-icon rounded-circle mx-auto mb-3">
+                    <img src="~/Content/img/AW.png" alt="" width="70px" height="70px" />
+                </span>
+                <h4>
+                    <strong>Manage your business from anywhere</strong>
+                </h4>
+                <p class="text-faded mb-0">With significant charts, you can see improvement in your business</p>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
+                <span class="service-icon rounded-circle mx-auto mb-3">
+                    <img src="~/Content/img/salary.png" alt="" width="70px" height="70px" />
+                </span>
+                <h4>
+                    <strong>
+                        Fuller Salery & Work Schdule’s.
+                    </strong>
+                </h4>
+                <p class="text-faded mb-0">
+                    You can manage your employees salaries and Schdule’s easily
+                    <i class="fa fa-money"></i>
+                </p>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <span class="service-icon rounded-circle mx-auto mb-3">
+                    <img src="~/Content/img/customer-review.png" alt="" width="70px" height="70px" />
+                </span>
+                <h4>
+                    <strong>Customers review</strong>
+                </h4>
+                <p class="text-faded mb-0">Yours customers they can improving your business by evaluating and they can have E-bills</p>
+            </div>
+        </div>
+    </div>
+    <br />
+    <b />
+    <br />
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-12">
+                <button class="btn btn-warning" onclick="location.href='@Url.Action("Register", "Account")';return false;">continue to register</button>
+            </div>
+
+        </div>
+    </div>
+</section>
